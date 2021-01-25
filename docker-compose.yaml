@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  keycloak:
+    networks:
+      - mm
+    ports:
+      - "8086:8080"
+    container_name: keycloak
+    image: jboss/keycloak
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+
+networks:
+  mm:
+    driver: bridge
+
